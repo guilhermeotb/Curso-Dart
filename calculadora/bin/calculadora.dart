@@ -1,12 +1,12 @@
 import 'dart:io';
 
 void main() {
+  print("--- Calculadora em Dart ---");
   double valor1 = 0;
-   //double.parse(stdin.readLineSync()!);
+
   double valor2 = 0;
-  //double.parse(stdin.readLineSync()!);
+
   String operacao = "";
-  //stdin.readLineSync()!;
 
   void soma() {
     print(valor1 + valor2);
@@ -24,49 +24,53 @@ void main() {
     print(valor1 * valor2);
   }
 
+  void calcular() {
+    switch (operacao) {
+      case "+":
+        soma();
+
+      case "-":
+        subtracao();
+
+      case "*":
+        multiplicacao();
+
+      case "/":
+        divisao();
+
+        break;
+    }
+  }
+
+  print("Digite o Primeiro Valor");
+
   String? entrada = stdin.readLineSync();
 
-  if(entrada != null){
-    if (entrada != ""){
+  if (entrada != null) {
+    if (entrada != "") {
       valor1 = double.parse(entrada);
     }
   }
 
-   entrada = stdin.readLineSync();
-  if(entrada != null){
-    if (entrada != ""){
+  print("Digite a Operação a Ser Realizada(+ , - , *, /)");
+
+  entrada = stdin.readLineSync();
+  if (entrada != null) {
+    operacao = entrada;
+  }
+
+
+
+  print("Digite o Segundo Valor");
+
+  entrada = stdin.readLineSync();
+  if (entrada != null) {
+    if (entrada != "") {
       valor2 = double.parse(entrada);
     }
   }
 
-  entrada = stdin.readLineSync();
-  if(entrada != null){
-    operacao = entrada;
-    }
+  print("O Resultado da Operação é:");
 
-
-  switch (operacao) {
-    case "+":
-      soma();
-
-    case "-":
-      subtracao();
-
-    case "*":
-      multiplicacao();
-
-    case "/":
-      divisao();
-
-      break;
-  }
-
-
-
-
-
-
-  } 
-
-
-
+  calcular();
+}
