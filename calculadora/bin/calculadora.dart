@@ -1,5 +1,30 @@
-import 'package:calculadora/calculadora.dart' as calculadora;
+import 'dart:io';
 
-void main(List<String> arguments) {
-  print('Hello world: ${calculadora.calculate()}!');
+void main() {
+ double valor1 = double.parse(stdin.readLineSync()!);
+ double valor2 = double.parse(stdin.readLineSync()!); 
+ 
+
+ void soma(){
+  print( valor1 + valor2);
+}
+
+void subtracao(){
+  print( valor1 - valor2);
+}
+
+void divisao(){
+  print( valor1 / valor2);
+}
+
+void multiplicacao(){
+  print( valor1 * valor2);
+}
+
+ soma();
+ subtracao();
+ divisao();
+ multiplicacao();
+
+
 }
